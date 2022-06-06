@@ -34,7 +34,7 @@ class Wrapper extends StatelessWidget {
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: const Text("Restaurants app"),
+          title: const Text("Clevelandart Artworks app"),
         ),
         body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
