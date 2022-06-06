@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurants_app/screens/home.dart';
 import 'package:restaurants_app/screens/login.dart';
+import 'package:restaurants_app/screens/sign_up.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +43,11 @@ class Wrapper extends StatelessWidget {
             if (snapshot.hasData) {
               return Home();
             } else {
-              return Login();
+              return SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [Login(), Signup()]));
             }
           },
         ));
