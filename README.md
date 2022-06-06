@@ -1,6 +1,6 @@
 # Cleveland Museum of Art mobile app
 
-A new Flutter project.
+A Flutter project to get and see the artworks stored at the [Cleveland Museum of Art](https://www.clevelandart.org/).
 
 ## TODO
 
