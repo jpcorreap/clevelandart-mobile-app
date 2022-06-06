@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
+class Signup extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _SignupState createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   var _passwordVisible = false;
@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
             const SizedBox(
               height: 30,
             ),
-            Text("Sign in for existing users"),
+            Text("Sign up for creating an account"),
             TextField(
               controller: _emailController,
               textInputAction: TextInputAction.next,
@@ -63,16 +63,16 @@ class _LoginState extends State<Login> {
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size.fromHeight(50)),
               icon: const Icon(Icons.lock_open, size: 32),
-              label: const Text("Sign In"),
-              onPressed: signIn,
+              label: const Text("Sign Up"),
+              onPressed: signUp,
             )
           ],
         ),
       );
 
-  Future signIn() async {
+  Future signUp() async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
     } catch (e) {
