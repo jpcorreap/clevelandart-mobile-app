@@ -20,6 +20,10 @@ class _ArtworkSearcherState extends State<ArtworkSearcher> {
     setState(() {
       try {
         getArtworks(widget, title).then((fetchedArtworks) {
+          print("Fetched artworks:");
+          fetchedArtworks.forEach((artwork) {
+            print(artwork.title + "  " + artwork.url);
+          });
           _artworks = fetchedArtworks;
         });
       } catch (e) {
@@ -61,7 +65,9 @@ class _ArtworkSearcherState extends State<ArtworkSearcher> {
                     }
                   },
                 ),
-                /*_artworks.length == 0
+                /*
+                TODO this should at least list the titles of artworks
+                _artworks.length == 0
                     ? Text("No data")
                     : Expanded(
                         child: ListView(
